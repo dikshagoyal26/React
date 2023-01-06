@@ -31,7 +31,7 @@ own words.
   * File watcher algorithm - made with C++
   * MINIFY - minifies the code 
   * BUNDLING - bundles data files into HTML, CSS & JS files
-  * Cleaning our code - clean the code by removing logs & unused code
+  * Cleaning our code - clean the code by removing unused code
   * DEV and production Build - builds supported for both dev & prod environments
   * Super fast building algorithm -  Parcel uses worker processess to enable multicore compilation, and has a file system cache for fast rebuilds.
   * does image optimization also - Parcel supports resizing, converting, and optimizing images

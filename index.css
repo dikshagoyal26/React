@@ -1,3 +1,43 @@
-.heading{
-    color: aqua;
+body{
+    margin: 0;
+    padding: 0;
+}
+#header{
+   position: sticky;
+   height: auto;
+   width: 100%;
+   background-color: #343A40;
+   padding: 5px 0;
+}
+.logo{
+    flex:1;
+    margin: auto;
+    text-align: center;
+}
+
+.user{
+  flex:1;
+  margin: auto;
+  text-align: center;
+}
+.header-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-img{
+    height: 50px;
+}
+.user-img{
+    height: 50px;
+}
+.search-bar{
+    flex: 4;
+    margin: auto;
+    text-align: center;
+}
+.search-bar input{
+    width: 80%;
+    border-radius: 5px;
+    height: 25px;
 }
