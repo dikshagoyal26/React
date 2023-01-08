@@ -7,6 +7,9 @@
 > JSX => React.createElement => Object => HTML (DOM)
 > JSX is secure of XSS attack, it will make sure app is safe by sanitizing it, called sanitisation
 > XSS - Cross site scripting (XSS) is an attack in which an attacker injects malicious executable scripts into the code of a trusted application or website. Attackers often initiate an XSS attack by sending a malicious link to a user and enticing the user to click it.
+> JSX can have only one parent element
+> in order to have 2 parents, wrap it inside a `div` or a component `<React.Fragment></React.Fragment>` or `<></>`
+> `<React.Fragment>` = `<></>`
 
 ```
 const h1 = <h1 id="title" key="h1">Namaste React</h1>
@@ -20,11 +23,11 @@ const h1 = <h1 id="title" key="h1">Namaste React</h1>
 
 ● `{TitleComponent}` VS `{<TitleComponent/>}` VS `<TitleComponent></TitleComponent>` in JSX?
 > `{TitleComponent}` - This value describes the TitleComponent as a javascript expession or a value. The {} can embed any javascript expression or values inside it.
-> `{<TitleComponent/>}` -  This represents a component returning some JSX or a function that is returning a JSX value. 
+> `{<TitleComponent/>}` -  It is a self closing tag. This represents a component returning some JSX or a function that is returning a JSX value. 
 > `<TitleComponent></TitleComponent>`- It is similar to the above one `{<TitleComponent/>}` when there is no child element associated.
 
 ● Babel? What does it do?
-> It takes a piece of code & delievers it
+> It is compiler/transpiler. It takes a piece of code & delievers it
 > how babel works?babel AST
 > babel comes as a dependency along with parcel
 > Note: Parcel will not remove console.log automatically. We need to configure for it. There is a package for it : babel-plugin-transform-remove-console & use it via `.babelrc` file

@@ -2,42 +2,38 @@ body{
     margin: 0;
     padding: 0;
 }
-#header{
-   position: sticky;
-   height: auto;
-   width: 100%;
-   background-color: #343A40;
-   padding: 5px 0;
-}
-.logo{
-    flex:1;
-    margin: auto;
-    text-align: center;
-}
-
-.user{
-  flex:1;
-  margin: auto;
-  text-align: center;
-}
-.header-container{
+.header{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding : 10px;
+    background-color: #343A40;
     align-items: center;
 }
-.logo-img{
-    height: 50px;
+.logo{
+    width: 100px;
 }
-.user-img{
-    height: 50px;
+.nav-items > ul{
+    list-style: none;
+    display: flex;
 }
-.search-bar{
-    flex: 4;
-    margin: auto;
-    text-align: center;
+
+.nav-items> ul> li{
+    padding: 0 10px;
+    color: white;
 }
-.search-bar input{
-    width: 80%;
-    border-radius: 5px;
-    height: 25px;
+
+.card{
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+.card > img {
+    width: 100%;
+}
+
+.restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
 }
