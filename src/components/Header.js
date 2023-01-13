@@ -19,16 +19,18 @@ const User = () => (
   </div>
 );
 
-export const Header = () => (
+const Header = () => (
   <div className="header">
     <Title />
     <div className="nav-items">
       <ul>
-        <li>About</li>
-        <li>Contact</li>
+        <li>Top Dishes</li>
+        <li>Offers</li>
+        <li>Restaurants</li>
         <li>Cart</li>
-        <li>User</li>
       </ul>
     </div>
   </div>
 );
+
+export default Header;

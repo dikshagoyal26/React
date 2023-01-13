@@ -37,3 +37,20 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
+.search-container{
+    text-align: center;
+    margin: auto;
+    padding: 10px 0 0;
+}
+.search-container > input{
+    width: 300px;
+    padding: 2px;
+}
+.search-container > button{
+    margin-left: 10px;
+    border-radius: 3px;
+    border: 0;
+    background-color: #F49142;
+    padding: 02px 5px ;
+    cursor: pointer;
+}
