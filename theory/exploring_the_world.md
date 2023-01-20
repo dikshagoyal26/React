@@ -28,6 +28,7 @@ maintain microservices architecture diagrams and services independently.
 
 ● Why do we need a `useEffect` hook?
 > `useEffect` connects a component to an external system
+> called after the component is rendered
 > It accepts a callback as the first argument
 > If second argument is not passed, it executes after every re-render
 > To fix it, pass a dependency array `[]` then it will be executed just once *after initial render*

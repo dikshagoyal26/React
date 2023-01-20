@@ -6,7 +6,7 @@ body{
     display: flex;
     justify-content: space-between;
     padding : 10px;
-    background-color: #343A40;
+    background-color: #232F3E;
     align-items: center;
 }
 .logo{
@@ -19,7 +19,7 @@ body{
 
 .nav-items> ul> li{
     padding: 0 10px;
-    color: white;
+    color: #FFFFFF;
 }
 
 .card{
@@ -53,4 +53,13 @@ body{
     background-color: #F49142;
     padding: 02px 5px ;
     cursor: pointer;
+}
+.shimmer-card{
+    width: 200px;
+    height: 200px;
+    background: lightgray;
+    margin: 10px;
+}
+.menu{
+    display: flex;
 }

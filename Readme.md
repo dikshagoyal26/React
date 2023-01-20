@@ -45,3 +45,15 @@ named import -> import {Title} from "./Title"
 > what is useUstate()? why?
 - to create local state variables
 - returns array, [variabble & a fn to update]
+
+
+
+> never call a component inside another component
+
+> hooks
+> never write useState inside if else/ for loop
+> never use useState outside a functional component
+
+
+> createBrowserROuter() function from react-router-dom. Helps us creating routing
+> RouterProvider

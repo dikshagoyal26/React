@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RestrauntCard from "./RestrauntCard";
 import Shimmer from "./Shimmer";
+import {Link} from "react-router-dom"
 
 const filterData = (searchText, restaurants) =>
   restaurants.filter((restaurant) =>
@@ -13,7 +14,7 @@ const Body = () => {
   const [restaurantData, setRestaurantData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-
+  console.log(useState())
   useEffect(() => {
     fetchRestraunts();
   }, []);
@@ -61,11 +62,15 @@ const Body = () => {
       </div>
       <div className="restaurant-list">
         {filteredData?.length === 0 ? (
-          
           <h1>No Restraunts found</h1>
         ) : (
           filteredData.map((restaurant) => (
-            <RestrauntCard {...restaurant.data} key={restaurant.data.id} />
+            <Link
+              to={`/restraunt/${restaurant.data.id}`}
+              key={restaurant.data.id}
+            >
+              <RestrauntCard {...restaurant.data} />
+            </Link>
           ))
         )}
       </div>
