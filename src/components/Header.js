@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 
 const Title = () => (
   <a href="/">
@@ -19,18 +19,39 @@ const User = () => (
   </div>
 );
 
-const Header = () => (
-  <div className="header">
-    <Title />
-    <div className="nav-items">
-      <ul>
-        <li>Top Dishes</li>
-        <li>Offers</li>
-        <li>Restaurants</li>
-        <li>Cart</li>
-      </ul>
+const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return (
+    <div className="header">
+      <Title />
+      <div className="nav-items">
+        <ul>
+          <li>Top Dishes</li>
+          <li>Offers</li>
+          <li>Restaurants</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+      {!isLoggedIn ? (
+        <button
+          onClick={() => {
+            setIsLoggedIn(true);
+          }}
+        >
+          Login
+        </button>
+      ) : (
+        <button
+          onClick={() => {
+            setIsLoggedIn(false);
+          }}
+        >
+          Logout
+        </button>
+      )}
     </div>
-  </div>
-);
+  );
+};
 
 export default Header;

@@ -26,7 +26,7 @@ const test = () => (
 > `<React.Fragment>` = `<></>`
 
 ● What is Virtual DOM?
-> A representation of DOM in our code. 
+> A representation of actual DOM in our code. 
 > The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM.
 > Virtual DOM is required for reconciliation.
 
@@ -66,3 +66,6 @@ const test = () => (
 > When it has different ends, it will only re-render.
 > Portions identified by the diff algo are only re-rendered.
 
+
+● Why React has Faster DOM manipulation?
+> React Fiber
