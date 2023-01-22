@@ -2,39 +2,27 @@ import { useEffect, useState } from "react";
 import RestrauntCard from "./RestrauntCard";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom"
-
-const filterData = (searchText, restaurants) =>
-  restaurants.filter((restaurant) =>
-    restaurant?.data?.name
-      ?.toLowerCase()
-      ?.includes(searchText?.trim().toLowerCase())
-  );
+import { filterData } from "../utils/helper";
+import useRestraunts from "../utils/useRestraunts";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
-  const [restaurantData, setRestaurantData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
+  const restaurantData = useRestraunts()
+  const [filteredData, setFilteredData] = useState(restaurantData);
   const [searchInput, setSearchInput] = useState("");
-  console.log(useState())
-  useEffect(() => {
-    fetchRestraunts();
-  }, []);
 
-  async function fetchRestraunts() {
-    try {
-      const response = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6625055&lng=77.2106953&page_type=DESKTOP_WEB_LISTING"
-      );
-      const json = await response.json();
-      setRestaurantData(json?.data?.cards[2]?.data?.data?.cards);
-      setFilteredData(json?.data?.cards[2]?.data?.data?.cards);
-    } catch (e) {
-      console.error(e);
-      setRestaurantData([]);
-    }
-  }
+  useEffect(()=>{
+    setFilteredData(restaurantData)
+  }, [restaurantData])
 
-  // not render component (Early return)
+
   if (!restaurantData) return null;
+
+  const isOnline = useOnline();
+
+  if(!isOnline){
+    return <h1>Offline, please check your internet connection!!</h1>
+  }
 
   return restaurantData.length == 0 ? (
     <Shimmer />

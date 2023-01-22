@@ -34,6 +34,7 @@ const Header = () => {
           <li><Link to={"/offers"}>Offers</Link></li>
           <li>Restaurants</li>
           <li>Cart</li>
+          <li><Link to={"/instamart"}>Instamart</Link></li>
         </ul>
       </div>
       {!isLoggedIn ? (

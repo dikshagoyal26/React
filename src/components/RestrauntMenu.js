@@ -1,24 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../constant";
+import useRestraunt from "../utils/useRestraunt";
 import Shimmer from "./Shimmer";
 
 const RestrauntMenu = () => {
   const { resId } = useParams();
-  const [restraunt, setRestraunt] = useState({});
-  useEffect(() => {
-    fetchRestraunt();
-  }, []);
-
-  async function fetchRestraunt() {
-    const response = await fetch(
-      "https://www.swiggy.com/dapi/menu/v4/full?lat=28.6625055&lng=77.2106953&menuId=" +
-        resId
-    );
-    const json = await response.json();
-    console.dir(json);
-    setRestraunt(json.data);
-  }
+  const restraunt = useRestraunt(resId);
 
   return !restraunt || Object.keys(restraunt).length == 0 ? (
     <Shimmer />
