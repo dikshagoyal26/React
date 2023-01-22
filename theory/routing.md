@@ -19,3 +19,9 @@
 
 
 <!-- TODO : add a login page using Formik library -->
+
+
+
+
+> `/about` means from the root go to about
+> `about` means that go to the about from a relative path
