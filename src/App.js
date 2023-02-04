@@ -11,9 +11,12 @@ import Footer from "./components/Footer";
 import RestrauntMenu from "./components/RestrauntMenu";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 // import Instamart from "./components/Instamart";
 
 const Instamart = lazy(() => import("./components/Instamart"));
+const Cart = lazy(() => import("./components/Cart"));
 
 const AppLayout = () => {
   const [user, setUser] = useState({
@@ -21,11 +24,13 @@ const AppLayout = () => {
     email: "dikshagoyal2612@gmail.com",
   });
   return (
-    <UserContext.Provider value={{ user: user, setUser: setUser }}>
-      <Header />
-      <Outlet />
-      <Footer />
-    </UserContext.Provider>
+    <Provider store={store}>
+      <UserContext.Provider value={{ user: user, setUser: setUser }}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -51,6 +56,14 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<Shimmer />}>
             <Instamart />
+          </Suspense>
+        ),
+      },
+      {
+        path: "cart",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <Cart />
           </Suspense>
         ),
       },
