@@ -1,27 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import RestrauntCard from "./RestrauntCard";
 import Shimmer from "./Shimmer";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useRestraunts from "../utils/useRestraunts";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
-  const restaurantData = useRestraunts()
+  const restaurantData = useRestraunts();
   const [filteredData, setFilteredData] = useState(restaurantData);
   const [searchInput, setSearchInput] = useState("");
 
-  useEffect(()=>{
-    setFilteredData(restaurantData)
-  }, [restaurantData])
-
+  const { user, setUser } = useContext(UserContext);
+  useEffect(() => {
+    setFilteredData(restaurantData);
+  }, [restaurantData]);
 
   if (!restaurantData) return null;
 
   const isOnline = useOnline();
 
-  if(!isOnline){
-    return <h1>Offline, please check your internet connection!!</h1>
+  if (!isOnline) {
+    return <h1>Offline, please check your internet connection!!</h1>;
   }
 
   return restaurantData.length == 0 ? (
@@ -47,6 +48,32 @@ const Body = () => {
         >
           Search
         </button>
+
+        <input
+          type="text"
+          className="focus:bg-green-200 p-2 m-2"
+          placeholder="User Name"
+          value={user.name}
+          onChange={(e) => {
+            setUser({
+              ...user,
+              name: e.target.value,
+            });
+          }}
+        />
+        
+        <input
+          type="text"
+          className="focus:bg-green-200 p-2 m-2"
+          placeholder="User Email"
+          value={user.email}
+          onChange={(e) => {
+            setUser({
+              ...user,
+              email: e.target.value,
+            });
+          }}
+        />
       </div>
       <div className="flex flex-wrap">
         {filteredData?.length === 0 ? (
