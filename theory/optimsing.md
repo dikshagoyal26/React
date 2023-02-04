@@ -1,3 +1,23 @@
+● When and why do we need lazy()?
+<!-- TODO -->
+
+
+● What is suspense?
+<!-- TODO -->
+
+
+
+● Why we got this error : A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition? How does suspense fix this error?
+<!-- TODO -->
+
+
+● Advantages and disadvantages of using this code splitting pattern?
+<!-- TODO -->
+
+● When do we and why do we need suspense?
+<!-- TODO -->
+
+
 ● Why do we need custom hooks?
 > modularity - more testable. broken down into meaningful pieces
 > reusability - re-use it

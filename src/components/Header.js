@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Title = () => (
   <Link to="/">
     <img
-      className="logo"
+      className="h-28 p-2"
       alt="food villa"
       src="https://lh3.googleusercontent.com/p/AF1QipO_6cTc3QdC9L2vAOyCkUPG-G-9YeFxo3YiDu3R=w1080-h608-p-no-v0"
     />
@@ -24,17 +24,17 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <div className="header">
+    <div className="flex justify-between bg-pink-50 shadow-lg sm:bg-blue-50 md:bg-yellow-50">
       <Title />
       <div className="nav-items">
-        <ul>
-          <li>
+        <ul className="flex py-10">
+          <li  className="px-2">
             <Link to={"/about"}>About Us</Link>
           </li>
-          <li><Link to={"/offers"}>Offers</Link></li>
-          <li>Restaurants</li>
-          <li>Cart</li>
-          <li><Link to={"/instamart"}>Instamart</Link></li>
+          <li  className="px-2"><Link to={"/offers"}>Offers</Link></li>
+          <li  className="px-2">Restaurants</li>
+          <li  className="px-2">Cart</li>
+          <li  className="px-2"><Link to={"/instamart"}>Instamart</Link></li>
         </ul>
       </div>
       {!isLoggedIn ? (

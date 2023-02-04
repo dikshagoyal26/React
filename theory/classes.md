@@ -8,18 +8,17 @@ this.state = {} // when updating the state
 
 ```
 
-
-
 ● Why do we do `super(props)`?
-<!-- TODO -->
-
-
-
+> super is a keyword to access properties of a class's prototype or invoke superclass's constructor.
+> if we do `super()` that will also work
+> but props will become inaccessible within the constructor if we don't pass them inside super. This though, doesn't have any effect on render() & componentWillMount().
+> React offical documentation recomments to always call the base constructor with `props`
 
 
 ● How do you create Nested Routes `react-router-dom` configuration?
-<!-- TODO -->
-
+> Nested routes can be created by passing children to the existing route
+> the path of the route will *not* start with `/path` as `/` specifies root path, while `path` specifies relative path.
+> The nested routes can then be accessed within that specific `<Outlet>` tag.
 
 ● createHashRouter, createMemoryRouter?
 <!-- TODO -->

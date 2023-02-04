@@ -38,10 +38,7 @@ maintain microservices architecture diagrams and services independently.
 > The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called is undefined or null, it returns undefined instead of throwing an error.
 
 ● What is Shimmer UI?
-<!-- TODO -->
-
-
-
+> Shimmer UI is a new UI design to display to the end users when the screen is loading. The benifit with that is that the UI change will be minimal & it is a bit more user friendly than a normal loader.
 
 ● What is difference between JS expression & JS statement?
 >  A JS expression produces a value. A number, string, ternary conditions (return true or false), math opertions and array map method (returns new array) are all examples of js expression.
@@ -79,9 +76,13 @@ restruants.length === 0 ? `no restraunt found` : restruants.length
 ```
 
 ● What is CORS?
-> CORS
-<!-- TODO: https://youtu.be/tcLW5d0KAYE watch -->
-
+> CORS is a mechanism which uses additional HTTP headers which tells the browser weather the specific web app can share resource with another web app
+> Both the web apps should have different origion to follow CORS mechanism
+> CORS preflight request(OPTIONS call) is made before the actual API call. If the call is valid, then it will send some additional HTTP headers, post that only the actual API call is made.
+> `Access-Control-Allow-Origin : * `
+> `Access-Control-Allow-Methods: *` or `POST, GET, OPTIONS`
+> `Access-Control-Allow-Headers: *`
+> `Access-Control-Max-Age: 86400`
 
 ● What is async await?
 <!-- TODO -->
