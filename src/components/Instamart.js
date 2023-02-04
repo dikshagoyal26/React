@@ -7,7 +7,7 @@ const Section = ({ title, description, isVisible, setIsVisible }) => {
       <button
         className="cursor-pointer underline"
         onClick={() => {
-          setIsVisible();
+          setIsVisible(!isVisible);
         }}
       >
         {!isVisible ? <>Show</> : <>Hide</>}
@@ -18,48 +18,32 @@ const Section = ({ title, description, isVisible, setIsVisible }) => {
 };
 
 const Instamart = () => {
-  const [sectionConfig, setSectionConfig] = useState({
-    showAbout: true,
-    showTeam: false,
-    showCareers: true,
-  });
+  const [visibleSection, setVisibleSection] = useState(null);
   return (
     <div>
       <h1>Instamart</h1>
       <Section
         title={"About Instamart"}
         description={"This is the about section of Instamart"}
-        isVisible={sectionConfig.showAbout}
-        setIsVisible={() =>
-          setSectionConfig({
-            showAbout: true,
-            showTeam: false,
-            showCareers: false,
-          })
+        isVisible={visibleSection === "about"}
+        setIsVisible={(isVisible) =>
+          !isVisible ? setVisibleSection(null) : setVisibleSection("about")
         }
       />
       <Section
         title={"Team Instamart"}
         description={"This is the team section of Instamart"}
-        isVisible={sectionConfig.showTeam}
-        setIsVisible={() =>
-          setSectionConfig({
-            showAbout: false,
-            showTeam: true,
-            showCareers: false,
-          })
+        isVisible={visibleSection === "team"}
+        setIsVisible={(isVisible) =>
+          !isVisible ? setVisibleSection(null) : setVisibleSection("team")
         }
       />
       <Section
         title={"Career Instamart"}
         description={"This is the career section of Instamart"}
-        isVisible={sectionConfig.showCareers}
-        setIsVisible={() =>
-          setSectionConfig({
-            showAbout: false,
-            showTeam: false,
-            showCareers: true,
-          })
+        isVisible={visibleSection === "career"}
+        setIsVisible={(isVisible) =>
+          !isVisible ? setVisibleSection(null) : setVisibleSection("career")
         }
       />
     </div>
