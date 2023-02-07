@@ -35,12 +35,14 @@ const Body = () => {
           className="focus:bg-green-200 p-2 m-2"
           placeholder="Search Restraunts"
           value={searchInput}
+          data-testid="search-input"
           onChange={(e) => {
             setSearchInput(e.target.value);
           }}
         />
         <button
           className="p-2 m-2 bg-purple-900 hover:bg-purple-500 text-white rounded-md"
+          data-testid="search-btn"
           onClick={() => {
             const data = filterData(searchInput, restaurantData);
             setFilteredData(data);
@@ -75,7 +77,7 @@ const Body = () => {
           }}
         />
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap" data-testid="restaurant-list">
         {filteredData?.length === 0 ? (
           <h1>No Restraunts found</h1>
         ) : (

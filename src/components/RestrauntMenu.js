@@ -19,7 +19,7 @@ const RestrauntMenu = () => {
   return !restraunt || Object.keys(restraunt).length == 0 ? (
     <Shimmer />
   ) : (
-    <div className="menu">
+    <div className="menu" >
       <div>
         <img src={IMG_CDN_URL + restraunt?.cloudinaryImageId} />
         <h1>Restraunt : {restraunt?.name}</h1>
@@ -31,13 +31,14 @@ const RestrauntMenu = () => {
       </div>
       <div>
         <h1>Menu Items</h1>
-        <ul>
+        <ul data-testid="menu">
           {Object.values(restraunt?.menu?.items ?? {}).map((menuItem) => (
             <li key={menuItem.id}>
               {menuItem.name}
               <button
                 className="p-1 m-0.5 border border-green-500"
                 onClick={()=>handleAddToCart(menuItem)}
+                data-testid="add-btn"
               >
                 Add to Cart
               </button>
